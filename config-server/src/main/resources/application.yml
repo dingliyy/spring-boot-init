@@ -1,0 +1,24 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/dingliyy/spring-boot-init/     # 配置git仓库的地址
+          search-paths: config-repo                                 # git仓库地址下的相对地址，可以配置多个，用,分割
+          username:                                                 # git仓库的账号
+          password:                                                 # git仓库的密码
+
+    ### spring cloud config server 中加入spring cloud bus 实现config的自动刷新
+    bus:
+      trace:
+        enabled: true        #开启cloud bus 跟踪
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/    # 指定注册中心的地址
+      
+      
