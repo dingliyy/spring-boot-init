@@ -7,8 +7,8 @@
     <artifactId>spring-boot-init</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>config-server</artifactId>
-  <name>config-server</name>
+  <artifactId>microservice-config-server</artifactId>
+  <name>microservice-config-server</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -24,15 +24,9 @@
         <artifactId>spring-cloud-starter-eureka</artifactId>
     </dependency>
     
-    <dependency>
+    <!-- <dependency>
         <groupId>org.springframework.cloud</groupId>
         <artifactId>spring-cloud-starter-bus-amqp</artifactId>
-    </dependency>
-        
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
+    </dependency> -->
   </dependencies>
 </project>

@@ -7,21 +7,20 @@
     <artifactId>spring-boot-init</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>microservice-eurake-server</artifactId>
-  <name>eureka-server</name>
+  <artifactId>microservice-gateway-server</artifactId>
+  <name>microservice-gateway-server</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-  	<dependency>
+    <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-eureka-server</artifactId>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zuul</artifactId>
     </dependency>
   </dependencies>
 </project>

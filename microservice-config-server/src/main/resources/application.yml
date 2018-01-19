@@ -13,9 +13,9 @@ spring:
           password:                                                 # git仓库的密码
 
     ### spring cloud config server 中加入spring cloud bus 实现config的自动刷新
-    bus:
-      trace:
-        enabled: true        #开启cloud bus 跟踪
+#    bus:
+#      trace:
+#        enabled: true        #开启cloud bus 跟踪
 eureka:
   client:
     serverUrl:
