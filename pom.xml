@@ -10,6 +10,7 @@
     <module>eureka-server</module>
     <module>config-server</module>
     <module>gateway-server</module>
+    <module>microservice-rabbitmq</module>
   </modules>
   
   <name>spring-boot-init</name>
@@ -33,7 +34,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Brixton.SR5</version>
+                <version>Brixton.SR7</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -59,7 +60,7 @@
 
 
 		<!--log-->
-		<!--spring boot 默认的logger是logback，不�??要添加对logback和SLF4J的额外依�??-->
+		<!--spring boot 默认的logger是logback，不�??要添加对logback和SLF4J的额外依�??-->
 		<!--可用@slf4j注解-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>

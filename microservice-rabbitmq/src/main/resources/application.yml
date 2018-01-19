@@ -1,0 +1,10 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: rabbitmq-test
+  rabbitmq:
+    host: 192.168.23.59
+    port: 5672
+    username: springcloud
+    password: springcloud
