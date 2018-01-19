@@ -1,0 +1,10 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: gateway-server
+    
+eureka:
+  client:
+    serverUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/    # 指定注册中心的地址
