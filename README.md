@@ -8,6 +8,7 @@
 eureka,ribbon,zuul,config...
 ```
 
+ - rabbitmq;
 
 ----------
 **micro-service and port**
