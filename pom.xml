@@ -11,6 +11,8 @@
     <module>config-server</module>
     <module>gateway-server</module>
     <module>microservice-rabbitmq</module>
+    <module>spring-boot-demo</module>
+    <module>ms-search</module>
   </modules>
   
   <name>spring-boot-init</name>
