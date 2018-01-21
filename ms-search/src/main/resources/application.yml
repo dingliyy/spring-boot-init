@@ -1,0 +1,12 @@
+server:
+
+  port: 9001
+
+spring:
+  application:
+    name: ms-search
+  data:
+    elasticsearch:
+      cluster-nodes: 192.168.23.59:9300
+      repositories:
+        enabled: true
