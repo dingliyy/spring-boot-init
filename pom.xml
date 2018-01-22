@@ -13,6 +13,7 @@
     <module>microservice-rabbitmq</module>
     <module>spring-boot-demo</module>
     <module>ms-search</module>
+    <module>microservice-config-server</module>
   </modules>
   
   <name>spring-boot-init</name>
@@ -62,7 +63,7 @@
 
 
 		<!--log-->
-		<!--spring boot 默认的logger是logback，不�??要添加对logback和SLF4J的额外依�??-->
+		<!--spring boot 默认的logger是logback，不�???要添加对logback和SLF4J的额外依�???-->
 		<!--可用@slf4j注解-->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
