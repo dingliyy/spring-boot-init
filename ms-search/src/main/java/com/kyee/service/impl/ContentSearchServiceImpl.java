@@ -13,12 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
+import org.springframework.stereotype.Service;
 
 import com.kyee.common.SearchParam;
 import com.kyee.domain.Content;
 import com.kyee.domain.Video;
 import com.kyee.service.ContentSearchService;
 
+@Service
 public class ContentSearchServiceImpl implements ContentSearchService{
 	@Autowired
 	private ElasticsearchOperations elasticsearchOperations;

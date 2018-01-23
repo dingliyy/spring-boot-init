@@ -1,0 +1,84 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.kyee</groupId>
+    <artifactId>spring-boot-init</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>ms-web</artifactId>
+  <packaging>war</packaging>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <dependencies>
+  	  <!-- 基础工具类 -->
+  	  <dependency>
+	      <groupId>com.kyee</groupId>
+	      <artifactId>ms-common</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      
+      <!-- druid数据源 -->
+      <dependency>
+	      <groupId>com.kyee</groupId>
+	      <artifactId>datasource-druid</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      
+      <!-- web框架 -->
+      <dependency>
+		   <groupId>org.springframework.boot</groupId>
+		   <artifactId>spring-boot-starter-web</artifactId>
+	  </dependency>
+		
+	  <!-- 数据源 -->
+	  <dependency>
+	       <groupId>org.springframework.boot</groupId>
+	       <artifactId>spring-boot-starter-data-jpa</artifactId>
+	   </dependency>
+	   
+	   <dependency>
+	       <groupId>mysql</groupId>
+	       <artifactId>mysql-connector-java</artifactId>
+	   </dependency>
+	   
+	   <!-- 序列化使用，controller里面自动将对象转成json字符串输出 -->
+	   <dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.28</version>
+		</dependency>
+	
+	   <dependency>
+		   <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		   <artifactId>jackson-jaxrs-json-provider</artifactId>
+	   </dependency>
+	   
+	   <dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-actuator</artifactId>
+	   </dependency>
+	   
+	  <dependency>
+		   <groupId>de.codecentric</groupId>  
+		   <artifactId>spring-boot-admin-starter-client</artifactId>  
+		   <version>1.5.0</version>  
+	  </dependency>  
+	   
+  </dependencies>
+</project>

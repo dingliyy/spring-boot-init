@@ -1,0 +1,9 @@
+server:
+  port: 9003
+  context-path: /svc-monitor/ #统一为访问的url加上一个前缀
+spring:
+  application:
+    name: svc-monitor
+  boot:  
+    admin:  
+      context-path: /sba    # 配置访问路径为：http://localhost:9003/svc-monitor/sba  
