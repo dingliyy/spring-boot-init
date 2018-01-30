@@ -1,4 +1,4 @@
-package com.kyee.controller;
+package com.tv189.controller;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kyee.common.domain.PageModel;
-import com.kyee.common.domain.SearchModel;
-import com.kyee.domain.Content;
-import com.kyee.service.ContentService;
+import com.tv189.domain.dto.PageDTO;
+import com.tv189.domain.dto.SearchDTO;
+import com.tv189.domain.po.ContentPO;
+import com.tv189.service.ContentService;
 
 /**
  * 这里@RefreshScope注解不能少，否则即使调用/refresh，配置也不会刷新
@@ -25,12 +25,12 @@ public class ContentController {
 	private ContentService contentService;
 	
 	@RequestMapping(value = "/{contentId}",method = RequestMethod.GET)
-    public List<Content> getContent(@PathVariable("contentId") String contentId){
+    public List<ContentPO> getContent(@PathVariable("contentId") String contentId){
 		return contentService.findByContentId(contentId);
     }
 	
 	@RequestMapping(value = "/search",method = RequestMethod.POST)
-    public PageModel<Content> search( SearchModel searchModel){
+    public PageDTO<ContentPO> search( SearchDTO searchModel){
 		return contentService.search(searchModel);
     }
 }

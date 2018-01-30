@@ -1,4 +1,4 @@
-package com.kyee.domain;
+package com.tv189.domain.po;
 
 import java.util.Date;
 
@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Data
 @Entity
 @Table(name="C_CONTENT")
-public class Content {
+public class ContentPO {
 	@Id
 	@GeneratedValue(generator = "idgenerator")
 	@GenericGenerator(name = "idgenerator", strategy="assigned")

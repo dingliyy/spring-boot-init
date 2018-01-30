@@ -1,4 +1,4 @@
-package com.kyee.common.domain;
+package com.tv189.domain.dto;
 
 import javax.validation.constraints.NotNull;
 
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SearchModel {
+public class SearchDTO {
 	@NotNull
 	private Integer pageNumber;
 	@NotNull

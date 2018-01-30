@@ -1,4 +1,4 @@
-package com.kyee.common.domain;
+package com.tv189.domain.dto;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PageModel<T> {
+public class PageDTO<T> {
 	
 	private Long total;
 	
