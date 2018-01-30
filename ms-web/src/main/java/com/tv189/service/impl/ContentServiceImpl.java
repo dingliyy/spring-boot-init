@@ -11,8 +11,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
-import com.kyee.core.db.Criteria;
-import com.kyee.core.db.Restrictions;
+import com.tv189.core.db.hibernate.Criteria;
+import com.tv189.core.db.hibernate.Restrictions;
 import com.tv189.domain.dto.PageDTO;
 import com.tv189.domain.dto.SearchDTO;
 import com.tv189.domain.po.ContentPO;
