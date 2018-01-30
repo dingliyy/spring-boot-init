@@ -2,8 +2,6 @@ package com.kyee.controller;
 
 import java.util.List;
 
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +20,7 @@ import com.kyee.service.ContentService;
 @RequestMapping("/content")
 //@RefreshScope
 public class ContentController {
+	
 	@Autowired
 	private ContentService contentService;
 	

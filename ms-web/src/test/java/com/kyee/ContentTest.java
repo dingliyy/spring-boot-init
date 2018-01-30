@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.kyee.core.util.HttpHelper;
+import com.tv189.Application;
 
 /**
  * 注解 @RunWith 添加SpringJunit支持，由此引入Spring-test框架支持
