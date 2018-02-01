@@ -12,10 +12,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import com.tv189.common.util.CacheKeyGenarator;
-import com.tv189.common.util.RedisTemplateUtil;
 import com.tv189.domain.dto.PageDTO;
 import com.tv189.domain.dto.SearchDTO;
 import com.tv189.domain.po.UserPO;
+import com.tv189.manager.RedisTemplateManager;
 import com.tv189.repository.UserRepository;
 import com.tv189.service.UserService;
 
@@ -31,7 +31,7 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private MongoTemplate mongoTemplate;//复杂的条件查询用这个
 	@Autowired
-	private RedisTemplateUtil<String, UserPO> redisTemplateUtil;
+	private RedisTemplateManager<String, UserPO> redisTemplateManager;
 
 	@Override
 	public List<UserPO> findByUserName(String userName) {
@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 		userRepository.save(userPO);
 		
 		String key = CacheKeyGenarator.makeKey("user_list");
-		redisTemplateUtil.addList(key, userPO);
+		redisTemplateManager.addList(key, userPO);
 	}
 	
 	@Override

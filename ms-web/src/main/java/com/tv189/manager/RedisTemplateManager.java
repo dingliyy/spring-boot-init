@@ -1,4 +1,4 @@
-package com.tv189.common.util;
+package com.tv189.manager;
 
 import java.lang.reflect.Type;
 
@@ -12,8 +12,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
+import com.tv189.common.util.CacheInvocation;
+import com.tv189.common.util.CompressUtil;
+
 /**
- * 缓存处理工具类
+ * Redis缓存处理通用类
  * 
  * ValueOperations：简单K-V操作
  * SetOperations：set类型数据操作
@@ -27,8 +30,7 @@ import com.alibaba.fastjson.JSON;
  * @date 2018年2月1日 上午11:37:08
  */
 @Component
-public class RedisTemplateUtil<PK, T> {
-	
+public class RedisTemplateManager<PK, T> {
 	@Autowired
 	private RedisTemplate<PK, T> redisTemplate;
 	

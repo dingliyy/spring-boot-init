@@ -1,4 +1,4 @@
-package com.tv189.configuration;
+package com.tv189.manager.configuration;
 
 import java.lang.reflect.Method;
 

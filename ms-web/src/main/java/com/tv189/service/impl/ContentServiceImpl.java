@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 import com.google.gson.reflect.TypeToken;
 import com.tv189.common.util.CacheInvocation;
 import com.tv189.common.util.CacheKeyGenarator;
-import com.tv189.common.util.RedisTemplateUtil;
 import com.tv189.core.db.hibernate.Criteria;
 import com.tv189.core.db.hibernate.Restrictions;
 import com.tv189.domain.dto.PageDTO;
 import com.tv189.domain.dto.SearchDTO;
 import com.tv189.domain.po.ContentPO;
+import com.tv189.manager.RedisTemplateManager;
 import com.tv189.repository.ContentRepository;
 import com.tv189.service.ContentService;
 /**
@@ -33,7 +33,7 @@ public class ContentServiceImpl implements ContentService {
 	@Autowired
 	private ContentRepository contentRepository;
 	@Autowired
-	private RedisTemplateUtil redisTemplateUtil;
+	private RedisTemplateManager redisTemplateManager;
 
 	/**
 	 * 第一种 Redis 缓存方式，注解方式自动管理
@@ -57,7 +57,7 @@ public class ContentServiceImpl implements ContentService {
 	@Override
 	public PageDTO<ContentPO> search(SearchDTO searchDTO) {
 		String key = CacheKeyGenarator.makeKey("content_search", searchDTO);
-		Object obj  = redisTemplateUtil.get(key, new CacheInvocation() {
+		Object obj  = redisTemplateManager.get(key, new CacheInvocation() {
 			
 			@Override
 			public PageDTO<ContentPO> invoke() {
