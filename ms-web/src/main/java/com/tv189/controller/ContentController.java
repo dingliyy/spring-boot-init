@@ -3,9 +3,9 @@ package com.tv189.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tv189.domain.dto.PageDTO;
@@ -24,8 +24,8 @@ public class ContentController {
 	@Autowired
 	private ContentService contentService;
 	
-	@RequestMapping(value = "/{contentId}",method = RequestMethod.GET)
-    public List<ContentPO> getContent(@PathVariable("contentId") String contentId){
+	@RequestMapping(value = "/getByContentId",method = RequestMethod.GET)
+    public List<ContentPO> getByContentId(@RequestParam(value = "contentId", required = true ) String contentId){
 		return contentService.findByContentId(contentId);
     }
 	
