@@ -19,7 +19,7 @@ import org.hibernate.annotations.GenericGenerator;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="C_CONTENT")
+@Table(name="CONTENT")
 public class ContentPO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
