@@ -7,24 +7,31 @@
     <artifactId>spring-boot-init</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>microservice-rabbitmq</artifactId>
-  <name>microservice-rabbitmq</name>
+  
+  <artifactId>spring-boot-admin</artifactId>
+  <name>sprng-boot-admin</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <dependencies>
-     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-amqp</artifactId>
-    </dependency>
+    
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-logging</artifactId>
-    </dependency>
+    
+    <dependency>  
+	    <groupId>de.codecentric</groupId>  
+	    <artifactId>spring-boot-admin-server</artifactId>
+	    <version>1.5.0</version> 
+	</dependency>
+	
+	<dependency>  
+	    <groupId>de.codecentric</groupId>  
+	    <artifactId>spring-boot-admin-server-ui</artifactId> 
+	    <version>1.5.0</version> 
+	</dependency>
+	
   </dependencies>
 </project>
