@@ -17,7 +17,7 @@
 		<module>ms-common</module>
 		<module>ms-search</module>
 		<module>ms-web</module>
-		<module>sprng-boot-admin</module>
+		<module>microservice-spring-boot-admin</module>
 		<module>datasource-druid</module>
     	<module>ms-web-mybatis</module>
   </modules>
@@ -33,6 +33,18 @@
 	    <artifactId>spring-boot-starter-parent</artifactId>
 	    <version>1.5.9.RELEASE</version>
 	</parent>
+	
+	<dependencyManagement>
+	    <dependencies>
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-dependencies</artifactId>
+	            <version>Dalston.SR5</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+	    </dependencies>
+   </dependencyManagement>
 
 	<dependencies>
 		<dependency>

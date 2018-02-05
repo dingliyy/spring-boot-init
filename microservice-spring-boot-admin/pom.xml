@@ -8,14 +8,21 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   
-  <artifactId>spring-boot-admin</artifactId>
-  <name>sprng-boot-admin</name>
+  <artifactId>microservice-spring-boot-admin</artifactId>
+  <name>spring-boot-admin</name>
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
   <dependencies>
+  	<!-- 注册与发现 -->
+  	<dependency>  
+            <groupId>org.springframework.cloud</groupId>  
+            <artifactId>spring-cloud-starter-eureka</artifactId>  
+    </dependency>  
     
+    <!-- Spring Boot Admin 监控 -->
     <dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-actuator</artifactId>
@@ -24,14 +31,39 @@
     <dependency>  
 	    <groupId>de.codecentric</groupId>  
 	    <artifactId>spring-boot-admin-server</artifactId>
-	    <version>1.5.0</version> 
+	    <version>1.5.4</version> 
 	</dependency>
 	
 	<dependency>  
 	    <groupId>de.codecentric</groupId>  
 	    <artifactId>spring-boot-admin-server-ui</artifactId> 
-	    <version>1.5.0</version> 
+	    <version>1.5.4</version> 
 	</dependency>
 	
   </dependencies>
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.3</version>
+                <configuration>
+                    <imageName>${project.groupId}/${project.artifactId}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.artifactId}-${project.version}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>

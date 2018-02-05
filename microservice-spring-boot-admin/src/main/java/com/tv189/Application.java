@@ -7,8 +7,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import de.codecentric.boot.admin.config.EnableAdminServer;
 
 @SpringBootApplication
-@EnableAdminServer
-@EnableDiscoveryClient
+@EnableAdminServer //启用监控服务
+@EnableDiscoveryClient //启用注册与发现的客户端侧
 public class Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

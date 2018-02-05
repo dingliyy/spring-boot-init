@@ -1,7 +1,7 @@
 # **spring-boot-init**
 
  - Spring Boot use;
- - Spring Cloud use:
+ - Spring Cloud use;
  
 
 ```
