@@ -1,0 +1,69 @@
+windows环境下远程创建docker镜像
+1、创建一个spring cloud工程(工程使用8888端口提供http服务)，在工程的pom.xml文件中增加docker插件依赖，如下：
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.3</version>
+                <configuration>
+                    <imageName>${project.build.finalName}/${project.artifactId}</imageName>
+                    <dockerDirectory>src/main/docker</dockerDirectory>
+                    <resources>
+                        <resource>
+                            <targetPath>/</targetPath>
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+            </plugin>
+
+2、在spring cloud工程中创建pom.xml的<dockerDirectory>指定的文件夹，本例中创建的是src/main/docker
+
+3、在src/main/docker文件夹下创建Dockerfile文件（注意：没有扩展名），Dockerfile的文件内容如下:
+   FROM daocloud.io/java:8
+   VOLUME /tmp
+   ADD spring-cloud-config-server-0.0.1-SNAPSHOT.jar app.jar
+   #RUN bash -c 'touch /app.jar'
+   ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+   EXPOSE 8888
+
+4、在docker服务所在服务器上（本例为linux）开启docker远程API（这部分在配置swarm的时候如果做了，就可以不做）
+   在OPTIONS中增加OPTIONS='-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock'信息，来开启docker远程API服务
+   可以用#netstat -anp|grep 2375 命令检查2375端口是否被监听
+
+5、在windows系统环境变量中新建DOCKER_HOST,值为tcp://192.168.125.139:2375，（这个IP为docker服务器ip地址）
+   DOCKER_HOST tcp://192.168.125.139:2375
+
+6、在windows系统环境变量中配置Maven的环境变量,本例配置如下：
+  MAVEN_HOME D:\GreenProgram\apache-maven-3.5.0
+  Path       D:\GreenProgram\apache-maven-3.5.0\bin
+
+6、windows的cmd模式下进入到工程的pom.xml所在目录进行maven编译和镜像发布，命令如下
+  mvn clean package docker:build
+  或
+  mvn clean
+  mvn package docker:build
+
+7、运行镜像
+  # docker run -p 8888:8888 -t  spring-cloud-config-server-0.0.1-SNAPSHOT/spring-cloud-config-server
+
+8、将镜像上传到私有仓库（此例私有仓库在运行在192.168.125.139:5000）
+  先给镜像标记一个tag，其中ea632f21a569为要上传的springlcloud的镜像ID
+  # docker tag ea632f21a569 192.168.125.139:5000/spring-cloud-config-server
+  在上传该镜像到私有仓库
+  # docker push 192.168.125.139:5000/spring-cloud-config-server
+
+----------------------------------------------------
+注意事项
+1、pom.xml的<imageName>指定的镜像名不能有大写字母和下划线，只能是小写字母和中画线。
+2、Dockerfile中的ADD命令的文件名必须写正确。
+3、docker build的时候需要jdk，jre估计不行
+
+----------------------------------------------------
+Dockerfile命令说明
+　FROM daocloud.io/java:8                      # 基于那个镜像，可以有多个FROM
+  FROM frolvlad/alpine-oraclejdk8:slim
+  VOLUME /tmp                                  # 将本地文件夹挂载到当前容器，使容器中的一个目录具有持久化存储数据的功能，该目录可以被容器本身使用，也可以共享给其他容器。当容器中的应用有持久化数据的需求时可以在Dockerfile中使用该指令。
+  ADD cloud-simple-docker-1.0.0.jar /app.jar   # 拷贝文件到容器
+  EXPOSE 8888                                  # 为Docker容器设置对外的端口号。在启动时，可以使用-p选项或者-P选项。
+  ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"] # 配置容器启动后执行的命令
