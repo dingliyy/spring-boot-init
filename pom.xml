@@ -14,7 +14,7 @@
 		<module>microservice-discovery-server</module>
 		<module>microservice-gateway-server</module>
 		<module>microservice-rabbitmq</module>
-		<module>ms-common</module>
+		<module>tv189-common</module>
 		<module>ms-search</module>
 		<module>ms-web</module>
 		<module>microservice-spring-boot-admin</module>
