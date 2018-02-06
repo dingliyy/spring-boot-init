@@ -23,8 +23,8 @@
 		<!-- 基础工具类 -->
 		<dependency>
 			<groupId>com.tv189</groupId>
-			<artifactId>ms-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>tv189-common</artifactId>
+			<version>1.0</version>
 		</dependency>
 
 		<!-- druid数据源 -->

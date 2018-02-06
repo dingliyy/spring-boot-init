@@ -18,8 +18,8 @@ import org.apache.log4j.Logger;
 
 
 
-public class HttpHelper {
-	private static Logger logger = Logger.getLogger(HttpHelper.class);
+public class HttpUtil {
+	private static Logger logger = Logger.getLogger(HttpUtil.class);
 
 	/**
 	 * 执行一个HTTP GET请求，返回请求响应的HTML

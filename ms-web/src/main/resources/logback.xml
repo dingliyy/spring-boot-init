@@ -56,7 +56,7 @@
     </appender>
 
     <!-- 日志输出级别 -->
-    <root level="INFO">
+    <root level="ALL">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
         <appender-ref ref="ERROR"/>
