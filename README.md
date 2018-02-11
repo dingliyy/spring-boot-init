@@ -34,6 +34,6 @@ ms-common -共用模块，包括util、db操作类
 
 ms-druid -共用模块，druid连接池配置
 
-ms-web-mybatis -mybatis代码自动生成、以及数据操作demo。
+ms-web-mybatis -mybatis代码自动生成、以及数据操作demo
 
 ```
