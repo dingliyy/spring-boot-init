@@ -1,23 +1,18 @@
 spring:
   profiles:
     active: devEnv
-    
-  jpa:
-    hibernate:
-      default_catalog: yourCatalog
-      default_schema: yourSchema
-      autoReconnect: true
-      show-sql: true
    #   ddl-auto: create   #自动根据实体建表
   resources:
     static-locations:classpath:/ 
 logging:
   level:
     root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.springms: DEBUG
+    org:
+      springframework: WARN
+      spring:
+        springboot:
+          dao: DEBUG
+logging.level.com.tv189.domain.po.mapper: DEBUG
     
     
     

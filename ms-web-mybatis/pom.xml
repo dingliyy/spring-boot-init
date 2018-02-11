@@ -35,7 +35,7 @@
         <dependency>
 	      <groupId>com.tv189</groupId>
 	      <artifactId>datasource-druid</artifactId>
-	      <version>0.0.1-SNAPSHOT</version>
+	      <version>1.0</version>
         </dependency>
         
         <!-- Spring Cloud Admin 监控 -->
@@ -49,5 +49,18 @@
 		   <artifactId>spring-boot-admin-starter-client</artifactId>  
 		   <version>1.5.0</version>  
 	   </dependency>  
+	   
+	   <dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.28</version>
+		</dependency>
+	   
+	   <!-- Junit -->
+	   <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
   </dependencies>
 </project>

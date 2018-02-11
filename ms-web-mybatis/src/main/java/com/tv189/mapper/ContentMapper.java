@@ -1,11 +1,11 @@
-package com.tv189.repository;
+package com.tv189.mapper;
 
 import com.tv189.domain.po.Content;
 import com.tv189.domain.po.ContentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface ContentMapper {
+public interface ContentMapper{
     long countByExample(ContentExample example);
 
     int deleteByExample(ContentExample example);

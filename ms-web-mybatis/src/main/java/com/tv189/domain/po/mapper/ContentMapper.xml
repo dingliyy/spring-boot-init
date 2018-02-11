@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.tv189.repository.ContentMapper">
+<mapper namespace="com.tv189.mapper.ContentMapper">
   <resultMap id="BaseResultMap" type="com.tv189.domain.po.Content">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="categoryid" jdbcType="INTEGER" property="categoryid" />

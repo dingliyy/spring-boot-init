@@ -54,6 +54,8 @@
             <onMismatch>DENY</onMismatch>
         </filter>
     </appender>
+    
+    <logger name="com.tv189.domain.po.mapper" level="DEBUG"/>
 
     <!-- 日志输出级别 -->
     <root level="INFO">
