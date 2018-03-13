@@ -52,7 +52,7 @@
         <!--生成Dao类存放位置 -->
         <javaClientGenerator
             type="XMLMAPPER"
-            targetPackage="com.tv189.repository"
+            targetPackage="com.tv189.mapper"
             targetProject="src/main/java">
             <property
                 name="enableSubPackages"
