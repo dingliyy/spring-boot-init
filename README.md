@@ -36,4 +36,6 @@ ms-druid -共用模块，druid连接池配置
 
 ms-web-mybatis -mybatis代码自动生成、以及数据操作demo
 
+ms-zookeeper zookeeper选举使用demo
+
 ```
