@@ -20,6 +20,7 @@
 		<module>microservice-spring-boot-admin</module>
 		<module>datasource-druid</module>
     	<module>ms-web-mybatis</module>
+    	<module>ms-zookeeper</module>
   </modules>
 
 	<properties>
@@ -75,7 +76,7 @@
 			<version>3.4</version>
 		</dependency>
 
-		<!-- 启用热部署 -->
+		<!-- 启用热部�? -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>

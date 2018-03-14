@@ -66,14 +66,40 @@
 	</dependencies>
 
 
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<url>http://192.168.23.60:18081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>Snapshots</id>
-			<url>http://192.168.23.60:18081/nexus/content/repositories/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<!-- <distributionManagement> <repository> <id>releases</id> <url>http://192.168.23.60:18081/nexus/content/repositories/releases/</url> 
+		</repository> <snapshotRepository> <id>Snapshots</id> <url>http://192.168.23.60:18081/nexus/content/repositories/snapshots</url> 
+		</snapshotRepository> </distributionManagement> -->
+
+	<build>
+		<finalName>statistics-topic</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>true</addMavenDescriptor>
+					</archive>
+				</configuration>
+			</plugin>
+			<!-- <plugin> 
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>true</addMavenDescriptor>
+					</archive>
+					<warName>ms-common</warName>
+				</configuration>
+			</plugin> -->
+		</plugins>
+	</build>
+	
+	<distributionManagement>  
+    <repository>  
+        <id>proficio-repository</id>  
+        <name>Proficio Repository</name>  
+        <url>file://e/cps/</url>  
+    </repository>  
+</distributionManagement> 
 </project>

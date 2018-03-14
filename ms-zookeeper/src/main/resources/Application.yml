@@ -1,0 +1,12 @@
+server:
+  port: 8080
+  name: manager
+
+zookeeper:
+  config:
+    address: 192.168.23.59:2181
+    dataDir: /zookeeper/test
+    baseSleepTimeMs: 2000
+    maxRetries: 3
+    
+topic.scheduler.cron: 0/5 * * * * ?
