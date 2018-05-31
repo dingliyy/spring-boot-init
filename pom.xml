@@ -22,6 +22,9 @@
     	<module>ms-web-mybatis</module>
     	<module>ms-zookeeper</module>
     <module>microservice-config-client</module>
+    <module>nginx-auth-filter</module>
+    <module>ms-auth-server</module>
+    <module>proto</module>
   </modules>
 
 	<properties>

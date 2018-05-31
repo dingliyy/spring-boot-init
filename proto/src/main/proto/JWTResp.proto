@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = false;  
+option java_package = "com.aq360.auth.manager.rpc.authentication";  
+option java_outer_classname = "AuthenticationProto";
+
+// 认证
+service AuthenticationService {
+	//校验token
+	rpc validateToken (ValidateTokenRequest) returns (ValidateTokenResponse) {};
+	
+}
+
+
+message ValidateTokenRequest {
+	string token = 1;
+	string url = 2;
+}
+
+message ValidateTokenResponse {
+	int32 status = 1;
+	string loginId = 2;
+	string refreshToken = 3;
+}
+
+
