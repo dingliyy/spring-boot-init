@@ -2,8 +2,8 @@ package com.aq360.auth.service.impl;
 
 import org.springframework.stereotype.Service;
 
+import com.aq360.auth.common.domain.bean.JWTInfo;
 import com.aq360.auth.common.util.JWTHelper;
-import com.aq360.auth.domain.bean.JWTInfo;
 import com.aq360.auth.service.AuthenticationService;
 
 @Service

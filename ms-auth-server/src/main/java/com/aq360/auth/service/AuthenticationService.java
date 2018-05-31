@@ -1,6 +1,6 @@
 package com.aq360.auth.service;
 
-import com.aq360.auth.domain.bean.JWTInfo;
+import com.aq360.auth.common.domain.bean.JWTInfo;
 
 /**
  * 认证接口

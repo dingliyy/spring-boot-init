@@ -1,9 +1,10 @@
-package com.tv189;
+package com.aq360;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * 使用@EnableZuulProxy注解开启Zuul的API网关服务功能，也可以使用@EnableZuulServer注解开启。
@@ -19,6 +20,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableDiscoveryClient
+@ComponentScan(value = "com.aq360")
 public class GatewayServerApplication {
 	public static void main(String[] args){
 		SpringApplication.run(GatewayServerApplication.class, args);

@@ -1,7 +1,4 @@
-/**
- * 
- */
-package com.aq360.auth.domain.bean;
+package com.aq360.auth.common.domain.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

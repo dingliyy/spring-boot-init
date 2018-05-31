@@ -1,4 +1,4 @@
-package com.aq360.auth.domain.bean;
+package com.aq360.gateway.common.domain.bean;
 
 public interface JWTInfo {
 

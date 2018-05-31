@@ -1,12 +1,8 @@
-/**
- * 
- */
-package com.aq360.auth.domain.vo.output;
+package com.aq360.auth.common.domain.vo.output;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * 

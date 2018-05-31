@@ -1,17 +1,10 @@
 package com.aq360.auth.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.aq360.auth.common.constant.JwtConstants;
-import com.aq360.auth.common.constant.ResultConstants;
-import com.aq360.auth.domain.bean.ReturnResult;
-import com.aq360.auth.domain.vo.output.JWTResp;
-import com.aq360.auth.service.AuthenticationService;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * token校验
@@ -20,8 +13,16 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2018/05/18 10:40
  */
 @RestController
-@Slf4j
+@RequestMapping("/authentication")
 public class AuthenticationController {
 	
+	@RequestMapping(value = "/getByContentId",method = RequestMethod.GET)
+    public String getByContentId(@RequestParam(value = "contentId", required = true ) String contentId
+    		,@RequestHeader(value = "loginId", required = false) String loginId
+    		,@RequestHeader(value = "Authorization", required = false) String Authorization){
+		System.out.println(loginId);
+		System.out.println(Authorization);
+		return "123";
+    }
 	
 }

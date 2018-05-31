@@ -1,10 +1,9 @@
 package com.aq360.auth.common.util;
-import java.util.Date;
 import java.util.Map;
 
 import com.aq360.auth.common.constant.JwtConstants;
-import com.aq360.auth.domain.bean.JWTInfo;
-import com.aq360.auth.domain.bean.JWTInfoImpl;
+import com.aq360.auth.common.domain.bean.JWTInfo;
+import com.aq360.auth.common.domain.bean.JWTInfoImpl;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
@@ -19,6 +18,8 @@ public class JWTHelper {
 		infoImpl.setUserId("dingli");
 		String token = generateToken(infoImpl);
 		System.out.println(token);
+		JWTInfo jwtInfo = getInfoFromToken(token);
+		System.out.println(jwtInfo.getUserId());
 	}
 
     /**
@@ -27,12 +28,8 @@ public class JWTHelper {
      */
     public static String generateToken(JWTInfo jwtInfo) {
 
-        Date date = new Date(System.currentTimeMillis() + JwtConstants.JWT_EXPIRATION);
-
         String compactJws = Jwts.builder()
-                .setHeader((Map<String, Object>) JwtConstants.JWT_HEADER)
                 .claim(JwtConstants.JWT_KEY_USER_ID, jwtInfo.getUserId())
-                .setExpiration(date)
                 .signWith(SignatureAlgorithm.HS256, JwtConstants.JWT_SIGNING_KEY)
                 .compact();
         return compactJws;
