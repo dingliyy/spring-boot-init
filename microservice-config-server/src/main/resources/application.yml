@@ -3,27 +3,42 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active: native
   cloud:
     config:
       server:
-        git:
-          uri: https://github.com/dingliyy/spring-boot-init/     # 配置git仓库的地址
-          search-paths: config-repo                                 # git仓库地址下的相对地址，可以配置多个，用,分割
-          username:                                                 # git仓库的账号
-          password:                                                 # git仓库的密码
+        # git: # 配置文件放git
+        #   uri: https://github.com/dingliyy/spring-boot-init/     # 配置git仓库的地址
+        #   search-paths: config-repo                                 # git仓库地址下的相对地址，可以配置多个，用,分割
+        #   username:                                                 # git仓库的账号
+        #   password:                                                 # git仓库的密码
+        native: #配置文件放本地目录
+          search-locations: E:/localServiceProperties                                       
 
     ### spring cloud config server 中加入spring cloud bus 实现config的自动刷新
-    bus:
-      trace:
-        enabled: true        #开启cloud bus 跟踪
+  #   bus:
+  #     trace:
+  #       enabled: true        #开启cloud bus 跟踪
+  # rabbitmq:
+  #   host: 192.168.23.59
+  #   port: 5672
+  #   username: springcloud
+  #   password: springcloud
   rabbitmq:
-    host: 192.168.23.59
+    host: 127.0.0.1
     port: 5672
-    username: springcloud
-    password: springcloud
+    username: guest
+    password: guest
+management:
+  security:
+    enabled: false
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka/    # 指定注册中心的地址
+      defaultZone: http://localhost:8761/eureka/    # 指定注册中心的地址
+  instance:
+    metadataMap:
+      zone: tianjin
       
       

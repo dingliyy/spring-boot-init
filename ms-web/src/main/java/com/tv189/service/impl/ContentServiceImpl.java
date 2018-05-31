@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 import com.google.gson.reflect.TypeToken;
 import com.tv189.common.util.CacheInvocation;
 import com.tv189.common.util.CacheKeyGenarator;
-import com.tv189.core.db.hibernate.Criteria;
-import com.tv189.core.db.hibernate.Restrictions;
+//import com.tv189.core.db.hibernate.Criteria;
+//import com.tv189.core.db.hibernate.Restrictions;
 import com.tv189.domain.dto.PageDTO;
 import com.tv189.domain.dto.SearchDTO;
 import com.tv189.domain.po.ContentPO;
@@ -56,25 +56,26 @@ public class ContentServiceImpl implements ContentService {
 	 */
 	@Override
 	public PageDTO<ContentPO> search(SearchDTO searchDTO) {
-		String key = CacheKeyGenarator.makeKey("content_search", searchDTO);
-		Object obj  = redisTemplateManager.get(key, new CacheInvocation() {
-			
-			@Override
-			public PageDTO<ContentPO> invoke() {
-				Sort sort = new Sort(Direction.ASC,"createTime");
-				Pageable pageable = new PageRequest(searchDTO.getPageNumber(),searchDTO.getPageSize(),sort);
-				Page<ContentPO> page = null;
-				Criteria<ContentPO> criteria = new Criteria<>();
-				if(StringUtils.isNoneEmpty(searchDTO.getKeyword())){
-					criteria.add(Restrictions.or(Restrictions.eq("contentId", searchDTO.getKeyword(), true),Restrictions.like("title", searchDTO.getKeyword(), true)));
-				}
-				page = contentRepository.findAll(criteria, pageable);
-				
-				PageDTO<ContentPO> pageDTO = new PageDTO<ContentPO>(page.getTotalElements(), page.getContent());
-				return pageDTO;
-			}
-		}, new TypeToken<PageDTO<ContentPO>>(){}.getType());
-		
-		return obj == null ? null : (PageDTO<ContentPO> ) obj ;
+//		String key = CacheKeyGenarator.makeKey("content_search", searchDTO);
+//		Object obj  = redisTemplateManager.get(key, new CacheInvocation() {
+//			
+//			@Override
+//			public PageDTO<ContentPO> invoke() {
+//				Sort sort = new Sort(Direction.ASC,"createTime");
+//				Pageable pageable = new PageRequest(searchDTO.getPageNumber(),searchDTO.getPageSize(),sort);
+//				Page<ContentPO> page = null;
+//				Criteria<ContentPO> criteria = new Criteria<>();
+//				if(StringUtils.isNoneEmpty(searchDTO.getKeyword())){
+//					criteria.add(Restrictions.or(Restrictions.eq("contentId", searchDTO.getKeyword(), true),Restrictions.like("title", searchDTO.getKeyword(), true)));
+//				}
+//				page = contentRepository.findAll(criteria, pageable);
+//				
+//				PageDTO<ContentPO> pageDTO = new PageDTO<ContentPO>(page.getTotalElements(), page.getContent());
+//				return pageDTO;
+//			}
+//		}, new TypeToken<PageDTO<ContentPO>>(){}.getType());
+//		
+//		return obj == null ? null : (PageDTO<ContentPO> ) obj ;
+		return null;
 	}
 }

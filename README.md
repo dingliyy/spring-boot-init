@@ -22,6 +22,8 @@ microservice-gateway-server:8762 -网关
 
 microservice-config-server:8030 -配置中心
 
+microservice-config-server:8040 -配置中心客户端
+
 Spring-boot-admin -微服务监控平台
 
 microservice-rabbitmq:9001 -rabbitmq demo

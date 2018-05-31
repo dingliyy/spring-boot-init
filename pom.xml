@@ -21,6 +21,7 @@
 		<module>datasource-druid</module>
     	<module>ms-web-mybatis</module>
     	<module>ms-zookeeper</module>
+    <module>microservice-config-client</module>
   </modules>
 
 	<properties>
