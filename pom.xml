@@ -25,6 +25,7 @@
     <module>nginx-auth-filter</module>
     <module>ms-auth-server</module>
     <module>proto</module>
+    <module></module>  <module>ms-kafka</module>
   </modules>
 
 	<properties>
