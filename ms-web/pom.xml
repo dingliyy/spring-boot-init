@@ -21,12 +21,12 @@
 		</dependency>
 
 		<!-- 基础工具类 -->
-		<!-- <dependency>
+		<dependency>
 			<groupId>com.tv189</groupId>
 			<artifactId>tv189-common</artifactId>
 			<version>1.0</version>
 		</dependency>
- -->
+
 		<!-- druid数据源 -->
 		<dependency>
 			<groupId>com.tv189</groupId>
